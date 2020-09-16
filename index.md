@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# ResumeAPI w/ Azure Functions
+Resume API challenge with Azure Functions
 
-You can use the [editor on GitHub](https://github.com/rishabkumar7/ResumeAPI/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Introduction 📑
+I've been inspired by the Cloud Resume Challenge by Forest Brazeal to build more stuff in the cloud. I wanted to build something simple to continue my Cloud journey. I decided to build an open-source REST API for my JSON-based standard format resume. I'm using JavaScript and Azure Functions.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Technologies ⚙
+- JavaScirpt
+- Azure Functions
 
-### Markdown
+## Let's get going 🚀
+As part of the #ServerlessSeptember, I submited my project as an article for the event and you can reference to my article here in order to get started with the Resume API.
+https://blog.rishabkumar.com/how-i-built-a-resume-api-with-javascript-and-azure-functions-ckesofyvt00grkls17pir3qd9
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rishabkumar7/ResumeAPI/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Submit your API endpoint
+ - Please fork this repo
+ - Edit the ResumeEndpoints.md
+ - Submit a PR
+ - Show it off on your resume.
