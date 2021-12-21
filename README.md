@@ -41,8 +41,7 @@ Add a function to your project by using the following command, where the --name 
 
 `func new` creates a subfolder matching the function name that contains a code file appropriate to the project's chosen language and a configuration file named function.json.
 
-- index.js
-`index.js` exports a function that's triggered according to the configuration in `function.json.`
+-`index.js` exports a function that's triggered according to the configuration in `function.json.`
 
 ```
 module.exports = async function (context, req) {
@@ -59,3 +58,145 @@ module.exports = async function (context, req) {
     };
 }
 ```
+Now we will edit the index.js so that it responds with our JSON resume. We will have our resume JSON in the jsonData as followings:
+```
+module.exports = function(context, req) {
+    jsonData = {
+	    "basics": {
+		      "name": "Rishab Kumar",
+		      "label": "CloudOps/DevOps",
+		      "picture": "",
+		      "email": "rishabkumar7@gmail.com",
+		      "website": "http://rishabkumar.com",
+		      "summary": "AWS and Linux entusiast with some experience in the Cloud.",
+		      "location": {
+			      "city": "Kingston",
+			      "countryCode": "CA",
+			      "region": "Ontario"
+		    },
+		  "profiles": [{
+				  "network": "Twitter",
+				  "username": "rishabk7",
+				  "url": "http://twitter.com/rishabk7"
+			  },
+			  {
+				  "network": "Linkedin",
+				  "username": "Rishab Kumar",
+				  "url": "https://www.linkedin.com/in/rishabkumar7/"
+			  },
+			  {
+				  "network": "GitHub",
+				  "username": "rishabkumar7",
+				  "url": "https://github.com/rishabkumar7"
+			  }
+		  ]
+	    },
+	    "work": [{
+		    "company": "ECi Software Solutions",
+		    "position": "CloudOps Specialist",
+		    "startDate": "2013-05-01",
+		    "endDate": "Present"
+	    }],
+	    "education": [{
+		    "institution": "St. Lawrence College",
+		    "area": "Computer Networking",
+		    "studyType": "Diploma",
+		    "startDate": "2016-05-01",
+		    "endDate": "2018-06-01"
+	    }],
+	    "awards": [{
+			    "title": "AWS Certified Developer Associate",
+			    "date": "2017-11-01"
+		    },
+		    {
+		      "title": "AWS Certified Soultions Architect Associate",
+			    "date": "2017-11-01"
+		    },
+		    {
+			    "title": "AWS Certified Cloud Practitioner",
+			    "date": "2017-11-01"
+		    },
+		    {
+		    	"title": "Microsoft Certified Azure Fundamentals",
+			    "date": "2017-11-01"
+		    },
+		    {
+			    "title": "OCI Foundatios 2020 Certified Associate",
+			    "date": "2017-11-01"
+		    }
+	   ]
+  }
+
+    context.res = {
+       body: JSON.stringify(jsonData, null, 2)
+    };
+    context.done();
+};
+```
+For an HTTP trigger, the function receives request data in the variable req as defined in function.json. The return object, defined as $return in function.json, is the response.
+
+- `function.json` is a configuration file that defines the input and output bindings for the function, including the trigger type.
+```
+{
+    "bindings": [
+        {
+            "authLevel": "anonymous",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        }
+    ]
+}
+```
+
+Note: By default the authLevel is set to function, we will change that to anonymous so that anyone can access our Resume.
+Each binding requires a direction, a type, and a unique name. The HTTP trigger has an input binding of type httpTrigger and output binding of type http.
+
+### Run the function locally
+Run your function by starting the local Azure Functions runtime host from the LocalFunctionProj folder: func start Toward the end of the output, the following lines should appear:
+```
+...
+
+Now listening on: http://0.0.0.0:7071
+Application started. Press Ctrl+C to shut down.
+
+Http Functions:
+
+        HttpExample: [GET,POST] http://localhost:7071/api/resume
+...
+```
+Copy the URL of your resume function from this output to a browser, the full URL like localhost:7071/api/resume. The browser should display a message like:
+
+In order to get rid of the `/api/` in the `http://localhost:7071/api/resume/`, you can do the following in the `host.json` file: Add the routePrefix property:
+```
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "extensions": {
+    "http": {
+        "routePrefix": ""
+    }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[1.*, 2.0.0)"
+  }
+}
+```
+The terminal in which you started your project also shows log output as you make requests. When you're ready, use Ctrl+C and choose y to stop the functions host.
