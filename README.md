@@ -5,8 +5,11 @@ Resume API challenge with Azure Functions
 I've been inspired by the Cloud Resume Challenge by Forest Brazeal to build more stuff in the cloud. I wanted to build something simple to continue my Cloud journey. I decided to build an open-source REST API for my JSON-based standard format resume. I'm using JavaScript and Azure Functions.
 
 ## Technologies ⚙
-- JavaScirpt
 - Azure Functions
+
+## Languages
+- Python
+- JavaScript
 
 ## Let's get going 🚀
 As part of the #ServerlessSeptember, I submited my project as an article for the event and you can reference to my article here in order to get started with the Resume API.
