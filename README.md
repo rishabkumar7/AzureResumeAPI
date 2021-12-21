@@ -10,6 +10,7 @@ I've been inspired by the Cloud Resume Challenge by Forest Brazeal to build more
 
 ## Let's get going 🚀
 As part of the #ServerlessSeptember, I submited my project as an article for the event and you can reference to my article here in order to get started with the Resume API.
+I used this [Resume JSON Schema](https://jsonresume.org/schema/) to create my resume in JSON format.
 
 <a href="https://blog.rishabkumar.com/how-i-built-a-resume-api-with-javascript-and-azure-functions-ckesofyvt00grkls17pir3qd9"><img src ="https://img.shields.io/badge/Blog-Blog-blue"></a>
 ## Submit your API endpoint
