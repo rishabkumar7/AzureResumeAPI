@@ -175,6 +175,7 @@ Http Functions:
 ...
 ```
 Copy the URL of your resume function from this output to a browser, the full URL like localhost:7071/api/resume. The browser should display a message like:
+![image](assets/localFunc.jpg)
 
 In order to get rid of the `/api/` in the `http://localhost:7071/api/resume/`, you can do the following in the `host.json` file: Add the routePrefix property:
 ```
@@ -259,6 +260,11 @@ Functions in myapphttp:
 
 Because your function uses an HTTP trigger, you invoke it by making an HTTP request to its URL in the browser or with a tool like curl. In both instances, the code URL parameter is your unique function key that authorizes the invocation of your function endpoint.
 
-Copy the complete Invoke URL shown in the output of the publish command into a browser address bar, . The browser should display a similar output as when you ran the function locally.
+Copy the complete Invoke URL shown in the output of the publish command into a browser address bar, .The browser should display a similar output as when you ran the function locally.
+
+![Azure Function](assets/azureFunc.jpg)
+
+Curl
+![Curl Function](assets/curlFunc.jpg)
 
 We did it 😍, now we have our Resume up and running, we can set custom domains in the Azure UI.
