@@ -265,6 +265,7 @@ Copy the complete Invoke URL shown in the output of the publish command into a b
 ![Azure Function](assets/azureFunc.jpg)
 
 Curl
+
 ![Curl Function](assets/curlFunc.jpg)
 
 We did it 😍, now we have our Resume up and running, we can set custom domains in the Azure UI.
