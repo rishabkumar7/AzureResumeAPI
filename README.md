@@ -230,3 +230,35 @@ Create the function app using the `az functionapp create` command. In the follow
 ```
 az functionapp create --resource-group AzureFunctionsQuickstart-rg --consumption-plan-location westeurope --runtime node --runtime-version 10 --functions-version 2 --name <APP_NAME> --storage-account <STORAGE_NAME>
 ```
+
+### Deploy the function project to Azure
+
+With the necessary resources in place, you're now ready to deploy your local functions project to the function app in Azure by using the `func azure functionapp publish` command. In the following example, replace `<APP_NAME>` with the name of your app.
+```
+func azure functionapp publish <APP_NAME>
+```
+If you see the error, "Can't find app with name ...", wait a few seconds and try again, as Azure may not have fully initialized the app after the previous `az functionapp create command`.
+
+The publish command shows results similar to the following output (truncated for simplicity):
+```
+Getting site publishing info...
+Creating archive for current directory...
+Performing remote build for functions project.
+
+...
+
+Upload completed successfully.
+Deployment completed successfully.
+Syncing triggers...
+Functions in myapphttp:
+    resume - [httpTrigger]
+        Invoke url: https://myapphttp.azurewebsites.net/resume
+```
+
+### Invoke the function on Azure
+
+Because your function uses an HTTP trigger, you invoke it by making an HTTP request to its URL in the browser or with a tool like curl. In both instances, the code URL parameter is your unique function key that authorizes the invocation of your function endpoint.
+
+Copy the complete Invoke URL shown in the output of the publish command into a browser address bar, . The browser should display a similar output as when you ran the function locally.
+
+We did it 😍, now we have our Resume up and running, we can set custom domains in the Azure UI.
