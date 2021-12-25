@@ -8,8 +8,9 @@ I've been inspired by the Cloud Resume Challenge by Forest Brazeal to build more
 - Azure Functions
 
 ## Languages
-- Python
-- JavaScript
+[ x ] Python
+[x] JavaScript
+[] CSharp
 
 ## Let's get going 🚀
 As part of the #ServerlessSeptember, I submited my project as an article for the event and you can reference to my article here in order to get started with the Resume API.
