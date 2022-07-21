@@ -135,5 +135,4 @@ module.exports = function (context, req) {
     context.res = {
         body: JSON.stringify(jsonData, null, 2)
     };
-    context.done();
 };
