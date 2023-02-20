@@ -1,4 +1,4 @@
-# ResumeAPI w/ Azure Functions
+# ResumeAPI with Azure Functions
 Resume API challenge with Azure Functions
 ![image](assets/AzureFunctions.png)
 
